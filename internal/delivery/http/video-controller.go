@@ -3,7 +3,7 @@ package http
 import (
 	"fmt"
 	"github.com/PHChenGit/Go-blog/internal/entity"
-	"github.com/PHChenGit/Go-blog/internal/service"
+	"github.com/PHChenGit/Go-blog/internal/usecase"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,10 +13,10 @@ type VideoController interface {
 }
 
 type controller struct {
-	service service.VideoService
+	service usecase.VideoUseCase
 }
 
-func New(service service.VideoService) VideoController {
+func New(service usecase.VideoUseCase) VideoController {
 	return &controller{
 		service: service,
 	}

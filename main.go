@@ -2,13 +2,13 @@ package main
 
 import (
 	controller "github.com/PHChenGit/Go-blog/internal/delivery/http"
-	"github.com/PHChenGit/Go-blog/internal/service"
+	"github.com/PHChenGit/Go-blog/internal/usecase"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 var (
-	videoService service.VideoService = service.NewVideoService()
+	videoService    usecase.VideoUseCase       = usecase.NewVideoService()
 	videoController controller.VideoController = controller.New(videoService)
 )
 
